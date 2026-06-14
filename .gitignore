@@ -16,3 +16,7 @@ out/
 .vscode/
 .idea/
 Thumbs.db
+
+# Environment variables
+.env*
+

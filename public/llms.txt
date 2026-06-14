@@ -1,0 +1,40 @@
+# AI Brainz - Operational AI Automation & Systems
+
+AI Brainz designs, builds, and implements custom AI-powered systems for sales, support, and business operations.
+
+## Overview
+
+AI Brainz approaches artificial intelligence from an engineering and operational standpoint rather than theoretical guidelines. We specialize in launching focused AI pilot systems that integrate directly into existing customer software stacks to solve specific manual bottlenecks.
+
+---
+
+## Core Services
+
+- **AI Sales Assistant**: 24/7 web-based lead capture, qualification, information mapping, and scheduling coordination.
+- **AI Support Assistant**: Domain-specific support assistants trained on custom FAQ logs, policies, and business guidelines to answer enquiries.
+- **AI Lead Follow-Up System**: Structured automated nurture paths to follow up with leads, share relevant documents, and minimize lead drop-offs.
+- **AI Booking & Scheduling Flow**: Friction-free calendar booking tunnels synced directly to availability.
+- **AI Content & SEO Pipeline**: Search Everywhere Optimization (SEO) strategies for Google, AI search engines, and social indexing.
+- **AI Workflow Automation**: Custom Zapier/Make.com integrations syncing contact forms, CRM systems, and internal team pipelines.
+
+---
+
+## Technical Architecture & Routes
+
+The website is a static, highly optimized Next.js single-page application wrapping booking widgets and assessments:
+
+- **Home page (`/`)**: Main landing page presenting the services, timeline, assessment quiz, FAQs, and Booker.
+- **Blog directory (`/blog`)**: Houses reports detailing how AI Brainz runs its own operations using AI (outreach, discovery, and SEO).
+- **Blog posts (`/blog/[slug]`)**:
+    - `/blog/ai-powered-discovery-outreach`: How We Built an AI-Powered Business Discovery & Outreach Pipeline
+    - `/blog/solving-lead-followup-leak`: Solving the Follow-Up Leak: Why Most Leads Fail to Convert
+    - `/blog/search-everywhere-optimization-seo`: Search Everywhere Optimization: The Future of Content Discovery
+- **Sitemap (`/sitemap.xml`)**: Index of all crawlable URLs.
+- **Robots profile (`/robots.txt`)**: Crawler rules for traditional search spiders and AI agents.
+
+---
+
+## Contact & Integrations
+
+- **Primary Action**: Prospects schedule a 30-minute AI Opportunity Review at [https://cal.com/toye-brainz-cal/ai-audit](https://cal.com/toye-brainz-cal/ai-audit).
+- **Supported Integrations**: OpenAI APIs, Anthropic APIs, Zapier, Make.com, HubSpot CRM, Slack integrations, and Cal.com Booker.
