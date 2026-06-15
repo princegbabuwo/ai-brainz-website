@@ -1,111 +1,190 @@
 'use client';
 
-import { Bot, UserCheck, MessageSquare, CalendarRange, SearchCheck, Zap } from 'lucide-react';
+import { Bot, MessageSquare, UserCheck, CalendarRange, SearchCheck, Zap } from 'lucide-react';
+import Image from 'next/image';
 
 const SERVICES = [
   {
     icon: Bot,
     title: 'AI Sales Assistant',
-    description: 'A customer-facing agent that interacts with web traffic 24/7. It answers complex inquiries, qualifies prospects instantly, collects critical details, and maps scheduling options without delay.',
-    accent: 'from-blue-500 to-indigo-500',
-    large: true,
+    description: '24/7 web agent to qualify leads, answer enquiries, and schedule consultations.'
   },
   {
     icon: MessageSquare,
     title: 'AI Support Assistant',
-    description: 'A dedicated support system trained strictly on your business knowledge base, product documentations, and service policies to answer customer support tickets instantly.',
-    accent: 'from-purple-500 to-pink-500',
-    large: false,
+    description: 'Trained on your knowledge base to resolve customer queries instantly.'
   },
   {
     icon: UserCheck,
     title: 'AI Lead Follow-Up System',
-    description: 'A structured automated workflow designed to nurture leads, check in on inactive prospects, share case studies, and convert interest to booked calls consistently.',
-    accent: 'from-amber-500 to-orange-500',
-    large: false,
+    description: 'Automated nurturing workflows to convert prospects into booked calls.'
+  },
+  {
+    icon: CalendarRange,
+    title: 'AI Booking & Scheduling',
+    description: 'Interactive calendars connecting enquiries to availability automatically.'
   },
   {
     icon: SearchCheck,
     title: 'AI Content & SEO Pipeline',
-    description: 'A full content creation framework configured for Multi-Channel Search Optimization. We set up systems that generate scripts, write optimization briefs, and adapt authority articles to rank across Google, AI scrapers, and socials.',
-    accent: 'from-emerald-500 to-teal-500',
-    large: true,
-  },
-  {
-    icon: CalendarRange,
-    title: 'AI Booking & Scheduling Flow',
-    description: 'Interactive scheduling tunnels that link enquiries to calendar availability automatically. Reduces friction by removing back-and-forth email loops entirely.',
-    accent: 'from-sky-500 to-blue-500',
-    large: false,
+    description: 'Slick content pipeline built to optimize across search & LLM channels.'
   },
   {
     icon: Zap,
-    title: 'AI Internal Workflow Automation',
-    description: 'Quiet, behind-the-scenes automations connecting your contact forms, CRM sheets, invoicing, and messaging systems to reduce team manual administrative friction.',
-    accent: 'from-rose-500 to-red-500',
-    large: false,
+    title: 'Workflow Automation',
+    description: 'Integrate forms, CRMs, and messaging apps to eliminate manual admin work.'
   }
 ];
 
 export default function ServicesGrid() {
   return (
-    <section id="services" className="py-20 relative bg-white">
+    <section id="services" className="py-24 relative bg-[#fafbfe] overflow-hidden">
       {/* Background blurs */}
-      <div className="gradient-blur gradient-blur-purple w-[450px] h-[450px] top-1/3 left-10"></div>
-      
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="ambient-glow glow-purple w-[400px] h-[400px] -top-20 -left-20"></div>
+
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
         
         {/* Title Section */}
-        <div className="max-w-3xl mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-xs font-semibold text-slate-600">
-            <span>PRACTICAL IMPLEMENTATIONS</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
-            AI Systems Built to Run <br />
-            Your Operations on Autopilot.
+        <div className="mb-14">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-950 font-display">
+            What We do
           </h2>
-          <p className="text-lg text-slate-600 max-w-xl">
-            We do not sell abstract code or complex tutorials. We build operational AI assistants that address specific bottlenecks and convert leads.
-          </p>
         </div>
 
-        {/* Asymmetric Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {SERVICES.map((service, index) => {
-            const IconComponent = service.icon;
-            return (
-              <div 
-                key={index}
-                className={`glass-card glass-card-hover rounded-2xl p-6 sm:p-8 flex flex-col justify-between ${service.large ? 'md:col-span-2' : 'md:col-span-1'}`}
-              >
-                <div className="space-y-6">
-                  {/* Icon Card */}
-                  <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${service.accent} text-white shadow-sm`}>
-                    <IconComponent size={24} />
-                  </div>
-                  
-                  {/* Wording */}
-                  <div className="space-y-3">
-                    <h3 className="text-xl font-bold text-slate-900 font-display">
-                      {service.title}
-                    </h3>
-                    <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                      {service.description}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Bottom line */}
-                <div className="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-indigo-600 uppercase tracking-wider">
-                  <span>Fully Custom Integration</span>
-                  <span>•</span>
-                </div>
+        {/* 8-Card Grid Layout (4-columns) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          {/* Card 1: AI Sales Assistant */}
+          <div className="premium-card premium-card-hover rounded-2xl p-6 min-h-[190px] flex flex-col justify-between">
+            <div>
+              <div className="text-slate-600 mb-4 inline-block p-2 rounded-xl bg-slate-100/70 border border-slate-200/40">
+                <Bot size={18} />
               </div>
-            );
-          })}
+              <h3 className="font-extrabold text-slate-900 text-sm mb-2 font-display">
+                {SERVICES[0].title}
+              </h3>
+              <p className="text-xs text-slate-500 leading-relaxed font-sans">
+                {SERVICES[0].description}
+              </p>
+            </div>
+          </div>
+
+          {/* Card 2: AI Support Assistant */}
+          <div className="premium-card premium-card-hover rounded-2xl p-6 min-h-[190px] flex flex-col justify-between">
+            <div>
+              <div className="text-slate-600 mb-4 inline-block p-2 rounded-xl bg-slate-100/70 border border-slate-200/40">
+                <MessageSquare size={18} />
+              </div>
+              <h3 className="font-extrabold text-slate-900 text-sm mb-2 font-display">
+                {SERVICES[1].title}
+              </h3>
+              <p className="text-xs text-slate-500 leading-relaxed font-sans">
+                {SERVICES[1].description}
+              </p>
+            </div>
+          </div>
+
+          {/* Card 3: AI Lead Follow-Up System */}
+          <div className="premium-card premium-card-hover rounded-2xl p-6 min-h-[190px] flex flex-col justify-between">
+            <div>
+              <div className="text-slate-600 mb-4 inline-block p-2 rounded-xl bg-slate-100/70 border border-slate-200/40">
+                <UserCheck size={18} />
+              </div>
+              <h3 className="font-extrabold text-slate-900 text-sm mb-2 font-display">
+                {SERVICES[2].title}
+              </h3>
+              <p className="text-xs text-slate-500 leading-relaxed font-sans">
+                {SERVICES[2].description}
+              </p>
+            </div>
+          </div>
+
+          {/* Card 4: AI Booking & Scheduling */}
+          <div className="premium-card premium-card-hover rounded-2xl p-6 min-h-[190px] flex flex-col justify-between">
+            <div>
+              <div className="text-slate-600 mb-4 inline-block p-2 rounded-xl bg-slate-100/70 border border-slate-200/40">
+                <CalendarRange size={18} />
+              </div>
+              <h3 className="font-extrabold text-slate-900 text-sm mb-2 font-display">
+                {SERVICES[3].title}
+              </h3>
+              <p className="text-xs text-slate-500 leading-relaxed font-sans">
+                {SERVICES[3].description}
+              </p>
+            </div>
+          </div>
+
+          {/* Card 5: AI Content & SEO Pipeline */}
+          <div className="premium-card premium-card-hover rounded-2xl p-6 min-h-[190px] flex flex-col justify-between">
+            <div>
+              <div className="text-slate-600 mb-4 inline-block p-2 rounded-xl bg-slate-100/70 border border-slate-200/40">
+                <SearchCheck size={18} />
+              </div>
+              <h3 className="font-extrabold text-slate-900 text-sm mb-2 font-display">
+                {SERVICES[4].title}
+              </h3>
+              <p className="text-xs text-slate-500 leading-relaxed font-sans">
+                {SERVICES[4].description}
+              </p>
+            </div>
+          </div>
+
+          {/* Card 6: Solid Indigo Brand Card (Rotating Neural Brain SVG) */}
+          <div className="bg-[#4f46e5] rounded-2xl p-6 min-h-[190px] flex items-center justify-center relative overflow-hidden group shadow-md border border-indigo-700/35">
+            {/* Background design */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-indigo-700/60 to-purple-600/40 opacity-70 group-hover:scale-105 transition-transform duration-500"></div>
+            
+            {/* Rotating SVG Neural Network Brain */}
+            <svg 
+              className="relative z-10 w-20 h-20 text-white opacity-90 animate-spin-slow" 
+              viewBox="0 0 100 100" 
+              fill="none" 
+              stroke="currentColor" 
+              strokeWidth="2"
+            >
+              <circle cx="50" cy="50" r="8" fill="currentColor" />
+              <line x1="50" y1="50" x2="20" y2="30" strokeDasharray="3 3" />
+              <line x1="50" y1="50" x2="80" y2="30" strokeDasharray="3 3" />
+              <line x1="50" y1="50" x2="20" y2="70" strokeDasharray="3 3" />
+              <line x1="50" y1="50" x2="80" y2="70" strokeDasharray="3 3" />
+              <circle cx="20" cy="30" r="5" fill="currentColor" />
+              <circle cx="80" cy="30" r="5" fill="currentColor" />
+              <circle cx="20" cy="70" r="5" fill="currentColor" />
+              <circle cx="80" cy="70" r="5" fill="currentColor" />
+              <path d="M20,30 L80,30 L80,70 L20,70 Z" strokeWidth="1" opacity="0.4" />
+            </svg>
+          </div>
+
+          {/* Card 7: AI Internal Workflow Automation */}
+          <div className="premium-card premium-card-hover rounded-2xl p-6 min-h-[190px] flex flex-col justify-between">
+            <div>
+              <div className="text-slate-600 mb-4 inline-block p-2 rounded-xl bg-slate-100/70 border border-slate-200/40">
+                <Zap size={18} />
+              </div>
+              <h3 className="font-extrabold text-slate-900 text-sm mb-2 font-display">
+                {SERVICES[5].title}
+              </h3>
+              <p className="text-xs text-slate-500 leading-relaxed font-sans">
+                {SERVICES[5].description}
+              </p>
+            </div>
+          </div>
+
+          {/* Card 8: High-quality consulting illustration image */}
+          <div className="rounded-2xl overflow-hidden relative min-h-[190px] h-full shadow-sm border border-slate-200/40">
+            <Image 
+              src="/service-collaboration.png" 
+              alt="AI Consultation" 
+              fill
+              className="object-cover hover:scale-105 transition-transform duration-500"
+              sizes="(max-w-768px) 100vw, 25vw"
+            />
+          </div>
+
         </div>
 
       </div>
     </section>
   );
 }
+

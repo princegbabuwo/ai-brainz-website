@@ -1,87 +1,132 @@
 import Hero from "@/components/Hero";
 import ServicesGrid from "@/components/ServicesGrid";
 import ProcessTimeline from "@/components/ProcessTimeline";
+import WorkCarousel from "@/components/WorkCarousel";
 import AssessmentQuiz from "@/components/AssessmentQuiz";
 import Booker from "@/components/Booker";
 import FaqAccordion from "@/components/FaqAccordion";
-import { ArrowRight, Sparkles } from "lucide-react";
+import ContactForm from "@/components/ContactForm";
 import Link from "next/link";
+import { ArrowRight, Check } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="relative w-full">
+    <div className="relative w-full bg-[#fafbfe]">
       {/* 1. Hero Section */}
       <Hero />
 
-      {/* 2. Services Grid */}
+      {/* 2. Services Grid ("What We do") */}
       <ServicesGrid />
 
-      {/* 3. Process Timeline */}
+      {/* 3. Work Carousel ("Check our Work") */}
+      <WorkCarousel />
+
+      {/* 4. Onboarding Process Roadmap */}
       <ProcessTimeline />
 
-      {/* 4. Assessment Quiz (Interactive Interest Form) */}
-      <div className="bg-slate-50/50 py-10">
-        <div className="max-w-7xl mx-auto px-6 text-center mb-10 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-xs font-semibold text-slate-600">
-            <span>SELF-ASSESSMENT TOOL</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-            How Ready is Your Business for AI?
-          </h2>
-          <p className="text-base text-slate-600 max-w-xl mx-auto">
-            Answer a few quick questions to receive a personalized automation audit rating and recommendation.
-          </p>
-        </div>
-        <AssessmentQuiz />
-      </div>
+      {/* 5. Pricing / Collaboration Section */}
+      <section id="pricing" className="py-24 relative bg-[#fafbfe] overflow-hidden">
+        {/* Glow backdrop */}
+        <div className="ambient-glow glow-pink w-[450px] h-[450px] top-10 left-10"></div>
 
-      {/* 5. Dedicated Cal.com Booker Section */}
-      <Booker />
+        <div className="max-w-6xl mx-auto px-6 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            
+            {/* Left side: Info & Call Meeting */}
+            <div className="lg:col-span-5 space-y-8">
+              <div className="space-y-4">
+                <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-950 font-display">
+                  Pricing
+                </h2>
+                <p className="text-xs sm:text-sm text-slate-500 leading-relaxed max-w-sm">
+                  Check our flexible collaboration models to start implementing AI in your business, proving value with zero risk.
+                </p>
+              </div>
 
-      {/* 6. Dual CTA Cards Banners */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Card 1 */}
-          <div className="glass-card rounded-2xl p-8 sm:p-10 border border-slate-200/80 bg-slate-50/20 flex flex-col justify-between space-y-6 relative overflow-hidden group">
-            <div className="gradient-blur gradient-blur-purple w-[300px] h-[300px] -top-20 -right-20 group-hover:scale-105 transition-transform duration-500"></div>
-            <div className="space-y-4 relative z-10">
-              <h3 className="text-2xl font-bold text-slate-900 font-display">
-                Request an AI Pilot Project
-              </h3>
-              <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                Want to test a single, focused AI system (like a Lead Response Assistant or FAQ support agent) with lower risk? Request a customized pilot project.
-              </p>
+              {/* Schedule meeting card */}
+              <div className="premium-card rounded-2xl p-8 border border-slate-200/80 bg-white/95 shadow-md space-y-6">
+                <h3 className="text-lg font-extrabold text-slate-900 font-display">
+                  Let's Schedule <br />
+                  a Meeting
+                </h3>
+                <Link 
+                  href="/#book" 
+                  className="btn-pill-blue px-6 py-3 text-xs font-bold shadow-sm inline-block"
+                >
+                  Schedule Meeting
+                </Link>
+              </div>
             </div>
-            <div className="relative z-10 pt-4">
-              <Link href="/#book" className="btn-primary px-6 py-3 rounded-full text-sm font-bold inline-flex items-center gap-2 group/btn">
-                <span>Initiate AI Pilot</span>
-                <ArrowRight size={16} className="transition-transform group-hover/btn:translate-x-1" />
-              </Link>
-            </div>
-          </div>
 
-          {/* Card 2 */}
-          <div className="glass-card rounded-2xl p-8 sm:p-10 border border-slate-200/80 bg-slate-50/20 flex flex-col justify-between space-y-6 relative overflow-hidden group">
-            <div className="gradient-blur gradient-blur-pink w-[300px] h-[300px] -bottom-20 -left-20 group-hover:scale-105 transition-transform duration-500"></div>
-            <div className="space-y-4 relative z-10">
-              <h3 className="text-2xl font-bold text-slate-900 font-display">
-                See How We Run AI Brainz
-              </h3>
-              <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                We don’t just build AI systems for clients. We run our own marketing, outreach, research, and notes pipelines internally with AI. Read our transparency reports.
-              </p>
+            {/* Right side: AI Pilot Program Card */}
+            <div className="lg:col-span-7">
+              <div className="premium-card rounded-3xl p-8 sm:p-10 border border-slate-200/80 bg-white shadow-lg space-y-8">
+                <div className="space-y-2">
+                  <h3 className="text-xl font-extrabold text-slate-950 font-display">
+                    AI Pilot Program
+                  </h3>
+                  <p className="text-xs text-slate-400">
+                    Launch a single, focused AI assistant with zero risk.
+                  </p>
+                </div>
+
+                {/* Features checklist */}
+                <div className="space-y-4">
+                  {[
+                    "1 Custom AI assistant (Sales or Support)",
+                    "Full software stack & API integration",
+                    "30 days of active performance tuning",
+                    "Complete knowledge base training",
+                    "Live operations logs & analytics dashboard"
+                  ].map((feat, idx) => (
+                    <div key={idx} className="flex items-center gap-3 text-xs font-semibold text-slate-600">
+                      <div className="p-1 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-100 shrink-0">
+                        <Check size={12} />
+                      </div>
+                      <span>{feat}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Divider */}
+                <hr className="border-slate-100" />
+
+                {/* Price and Action */}
+                <div className="flex items-center justify-between gap-6">
+                  <div>
+                    <span className="text-2xl sm:text-3xl font-extrabold text-slate-950 font-display">
+                      $2,500
+                    </span>
+                    <span className="text-xs text-slate-400 ml-1 font-semibold">/pilot</span>
+                  </div>
+
+                  <Link 
+                    href="/#book" 
+                    className="p-3.5 rounded-full bg-slate-950 text-white hover:bg-slate-800 transition-colors shadow-md"
+                    aria-label="Get Started with AI Pilot"
+                  >
+                    <ArrowRight size={16} />
+                  </Link>
+                </div>
+              </div>
             </div>
-            <div className="relative z-10 pt-4">
-              <Link href="/blog" className="btn-secondary px-6 py-3 rounded-full text-sm font-bold inline-flex items-center gap-2">
-                <span>Read Operations Blog</span>
-              </Link>
-            </div>
+
           </div>
         </div>
       </section>
 
-      {/* 7. FAQs */}
+      {/* 6. Assessment Quiz (Interactive Audit Diagnostic) */}
+      <AssessmentQuiz />
+
+      {/* 7. FAQs (Frequently Asked Questions in two-column grid) */}
       <FaqAccordion />
+
+      {/* 8. Booker (Cal.com scheduler iframe) */}
+      <Booker />
+
+      {/* 9. Contact Form ("Let's Get in Touch") */}
+      <ContactForm />
     </div>
   );
 }
+

@@ -1,33 +1,12 @@
 'use client';
 
-import dynamic from 'next/dynamic';
-
-
-const BookerEmbed = dynamic(
-  () => import('@calcom/atoms').then((mod) => mod.BookerEmbed),
-  { ssr: false }
-);
-
-
-// Helper function to parse calLink
-function parseCalLink(urlStr) {
-  const defaultVal = { calUsername: "toye-brainz-cal", eventSlug: "ai-audit" };
-  if (!urlStr) return defaultVal;
-
-  try {
-    const cleaned = urlStr.replace(/https?:\/\/(www\.)?cal\.com\//i, '').split('/');
-    const username = cleaned[0] || defaultVal.calUsername;
-    const eventSlug = cleaned[1] || defaultVal.eventSlug;
-    return { calUsername: username, eventSlug: eventSlug };
-  } catch (e) {
-    console.error("Failed to parse cal.com link:", e);
-    return defaultVal;
-  }
-}
-
 export default function Booker() {
-  const calLink = process.env.NEXT_PUBLIC_CAL_LINK;
-  const { calUsername, eventSlug } = parseCalLink(calLink);
+  const calLink = process.env.NEXT_PUBLIC_CAL_LINK || "https://cal.com/toye-brainz-cal/ai-audit";
+  
+  // Ensure we append the embed=true parameter to hide Cal.com's header/footer layout
+  const embedUrl = calLink.includes('?') 
+    ? `${calLink}&embed=true` 
+    : `${calLink}?embed=true`;
 
   return (
     <div id="book" className="py-20 bg-slate-50 relative overflow-hidden">
@@ -46,18 +25,13 @@ export default function Booker() {
           </p>
         </div>
 
-        {/* Booker Embed container */}
-        <div className="glass-card rounded-2xl p-4 sm:p-6 border border-slate-200/80 shadow-lg bg-white/80">
-          <BookerEmbed
-            eventSlug={eventSlug}
-            view="month_view"
-            username={calUsername}
-            customClassNames={{
-              bookerContainer: "border-0 shadow-none bg-transparent rounded-lg",
-            }}
-            onCreateBookingSuccess={() => {
-              console.log("booking created successfully");
-            }}
+        {/* Booker Iframe container */}
+        <div className="glass-card rounded-2xl border border-slate-200/80 shadow-lg bg-white overflow-hidden h-[650px]">
+          <iframe
+            src={embedUrl}
+            className="w-full h-full border-0"
+            allow="camera; microphone; autoplay; clipboard-write"
+            title="Cal.com Booking Widget"
           />
         </div>
 
