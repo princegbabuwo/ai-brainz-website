@@ -22,8 +22,8 @@ export default function Home() {
       {/* 4. How We Use AI */}
       <HowWeUseAI />
 
-      {/* 5. Work Carousel ("Check our Work") */}
-      <WorkCarousel />
+      {/* 5. Work Carousel ("Check our Work") - Hidden */}
+      {/* <WorkCarousel /> */}
 
       {/* 6. Onboarding Process Roadmap */}
       <ProcessTimeline />
@@ -36,3 +36,4 @@ export default function Home() {
     </div>
   );
 }
+
