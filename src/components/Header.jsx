@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu, X, Sparkles } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -57,10 +57,7 @@ export default function Header() {
 
         {/* Desktop CTA actions - styled like Sign In / Sign Up */}
         <div className="hidden md:flex items-center gap-4 text-xs font-semibold">
-          <Link href="/#quiz" className="text-slate-600 hover:text-indigo-600 transition-colors">
-            Check Quiz
-          </Link>
-          <Link href="/#book" className="btn-pill-blue px-4 py-2 text-xs font-bold shadow-sm">
+          <Link href="/#contact" className="btn-pill-blue px-4 py-2 text-xs font-bold shadow-sm">
             Book Audit
           </Link>
         </div>
@@ -115,14 +112,7 @@ export default function Header() {
           </Link>
           <hr className="border-slate-100 my-1" />
           <Link 
-            href="/#quiz" 
-            className="text-sm font-bold text-slate-700 hover:text-indigo-600 transition-colors text-center"
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            Check Quiz
-          </Link>
-          <Link 
-            href="/#book" 
+            href="/#contact" 
             className="btn-pill-blue text-center px-4 py-2.5 text-xs font-bold"
             onClick={() => setMobileMenuOpen(false)}
           >
@@ -133,4 +123,3 @@ export default function Header() {
     </header>
   );
 }
-

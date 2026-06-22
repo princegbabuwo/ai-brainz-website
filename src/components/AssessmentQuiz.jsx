@@ -263,7 +263,7 @@ export default function AssessmentQuiz() {
               {/* Action items */}
               <div className="flex flex-col sm:flex-row gap-3 pt-2">
                 <a
-                  href="#book"
+                  href="#contact"
                   onClick={() => setStep(-1)}
                   className="btn-primary text-center px-6 py-3 rounded-full text-sm font-bold flex items-center justify-center gap-2 flex-1"
                 >

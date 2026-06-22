@@ -35,7 +35,7 @@ const SLIDES = [
                   <Bot size={10} />
                   <span>AI Assistant</span>
                 </div>
-                Absolutely! We build custom calendar flows that connect booking directly to your CRM. Let's schedule a time to review it.
+                Absolutely! We build custom calendar flows that connect booking directly to your CRM. Let&apos;s schedule a time to review it.
               </div>
             </div>
             {/* Input mock */}

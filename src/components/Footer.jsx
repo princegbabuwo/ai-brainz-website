@@ -31,7 +31,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-xs sm:text-sm text-slate-400 leading-relaxed font-sans">
-              Ready to automate your operations? Contact us today to schedule your consultation and see how custom AI pipelines can scale your team.
+              Ready to automate your operations? Contact us today to schedule your consultation and see how custom AI pipelines can scale your business.
             </p>
           </div>
 

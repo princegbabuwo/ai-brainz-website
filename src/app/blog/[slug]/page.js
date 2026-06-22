@@ -175,7 +175,7 @@ export default async function BlogPostPage({ params }) {
             </p>
           </div>
           <div className="relative z-10">
-            <Link href="/#book" className="btn-primary px-6 py-3 rounded-full text-sm font-bold inline-block">
+            <Link href="/#contact" className="btn-primary px-6 py-3 rounded-full text-sm font-bold inline-block">
               Schedule Your Audit Review
             </Link>
           </div>

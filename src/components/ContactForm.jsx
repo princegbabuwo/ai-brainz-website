@@ -28,7 +28,7 @@ export default function ContactForm() {
         {/* Title */}
         <div className="text-center mb-10">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-950 font-display">
-            Let's Get in Touch
+            Let&apos;s Get in Touch
           </h2>
         </div>
 
