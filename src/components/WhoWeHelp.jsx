@@ -51,12 +51,12 @@ export default function WhoWeHelp() {
               Who We Help
             </span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-950 font-display leading-tight">
-              We build for businesses & professionals adapting to the speed of AI.
+              We help businesses & professionals adapt to the speed of AI.
             </h2>
           </div>
           <div className="lg:col-span-6 lg:pt-6">
             <p className="text-sm sm:text-base text-slate-500 leading-relaxed max-w-xl">
-              We design and implement custom AI automation, lead follow-ups, and customer journey workflows for companies ready to capture every opportunity without increasing manual effort.
+              We design and implement custom AI automation, lead follow-ups, and customer journey workflows for businesses ready to capture every opportunity in today&apos;s AI era.
             </p>
           </div>
         </div>
