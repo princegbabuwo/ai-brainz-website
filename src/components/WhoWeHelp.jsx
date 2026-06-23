@@ -28,7 +28,7 @@ export default function WhoWeHelp() {
               Who We Help
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-950 font-display">
-              Built for businesses and professionals with costly manual gaps.
+              Built for businesses and professionals who don&apos;t want to be left behind.
             </h2>
           </div>
 
