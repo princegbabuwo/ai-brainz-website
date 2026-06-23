@@ -46,20 +46,16 @@ export default function WhoWeHelp() {
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         {/* Header Block */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-16">
-          <div className="lg:col-span-12 space-y-4">
-            <span className="text-[11px] font-extrabold uppercase tracking-[0.24em] text-indigo-600">
-              Who We Help
-            </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-950 font-display leading-tight max-w-4xl">
-              We help businesses & professionals adapt to the speed of AI.
-            </h2>
-          </div>
-          <div className="lg:hidden col-span-12 mt-2">
-            <p className="text-sm sm:text-base text-slate-500 leading-relaxed max-w-xl">
-              We design and implement custom AI automation, lead follow-ups, and customer journey workflows for businesses ready to capture every opportunity in today&apos;s AI era.
-            </p>
-          </div>
+        <div className="flex flex-col gap-4 mb-16 max-w-4xl">
+          <span className="text-[11px] font-extrabold uppercase tracking-[0.24em] text-indigo-600">
+            Who We Help
+          </span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-950 font-display leading-tight">
+            We help businesses & professionals adapt to the speed of AI.
+          </h2>
+          <p className="text-sm sm:text-base text-slate-500 leading-relaxed max-w-2xl">
+            We design and implement custom AI automation, lead follow-ups, and customer journey workflows for businesses ready to capture every opportunity in today&apos;s AI era.
+          </p>
         </div>
 
         {/* Audience Grid */}
