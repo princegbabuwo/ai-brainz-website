@@ -1,6 +1,6 @@
 'use client';
 
-import { Building2, BriefcaseBusiness, Home, ShoppingBag, Users, Repeat2, Clock3, TrendingUp } from 'lucide-react';
+import { Building2, BriefcaseBusiness, Home, ShoppingBag, Users, Repeat2, Clock3, TrendingUp, Search, AlertCircle } from 'lucide-react';
 
 const AUDIENCES = [
   {
@@ -31,9 +31,10 @@ const AUDIENCES = [
 ];
 
 const SIGNALS = [
-  { icon: Clock3, label: 'Slow response' },
-  { icon: Repeat2, label: 'Repetitive enquiries' },
-  { icon: TrendingUp, label: 'Leaky sales follow-up' }
+  { icon: Search, label: 'Poor business discoveries' },
+  { icon: Repeat2, label: 'Repetitive enquiries.' },
+  { icon: Clock3, label: 'Stale/Slow responses' },
+  { icon: AlertCircle, label: 'Slow/Manual operations' }
 ];
 
 export default function WhoWeHelp() {
@@ -46,15 +47,15 @@ export default function WhoWeHelp() {
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         {/* Header Block */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-16">
-          <div className="lg:col-span-6 space-y-4">
+          <div className="lg:col-span-12 space-y-4">
             <span className="text-[11px] font-extrabold uppercase tracking-[0.24em] text-indigo-600">
               Who We Help
             </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-950 font-display leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-950 font-display leading-tight max-w-4xl">
               We help businesses & professionals adapt to the speed of AI.
             </h2>
           </div>
-          <div className="lg:col-span-6 lg:pt-6">
+          <div className="lg:hidden col-span-12 mt-2">
             <p className="text-sm sm:text-base text-slate-500 leading-relaxed max-w-xl">
               We design and implement custom AI automation, lead follow-ups, and customer journey workflows for businesses ready to capture every opportunity in today&apos;s AI era.
             </p>
@@ -84,19 +85,21 @@ export default function WhoWeHelp() {
         </div>
 
         {/* Bottleneck signals list */}
-        <div className="flex flex-wrap items-center justify-center gap-3 pt-6 border-t border-slate-100">
-          <span className="text-xs font-bold text-slate-400 uppercase tracking-wider mr-2">
-            Solve bottlenecks like:
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-3 pt-6 border-t border-slate-100">
+          <span className="text-xs font-bold text-slate-400 uppercase tracking-wider text-center lg:text-left lg:mr-2">
+            We solve bottlenecks like:
           </span>
-          {SIGNALS.map((item) => {
-            const Icon = item.icon;
-            return (
-              <div key={item.label} className="inline-flex items-center gap-2 rounded-full border border-slate-200/80 bg-white/80 px-4 py-2 text-xs font-bold text-slate-600 shadow-sm">
-                <Icon size={14} className="text-emerald-600" />
-                <span>{item.label}</span>
-              </div>
-            );
-          })}
+          <div className="flex flex-wrap justify-center gap-2">
+            {SIGNALS.map((item) => {
+              const Icon = item.icon;
+              return (
+                <div key={item.label} className="inline-flex items-center gap-2 rounded-full border border-slate-200/80 bg-white/80 px-4 py-2 text-xs font-bold text-slate-600 shadow-sm">
+                  <Icon size={14} className="text-emerald-600" />
+                  <span>{item.label}</span>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
