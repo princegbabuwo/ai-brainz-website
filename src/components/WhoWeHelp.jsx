@@ -31,9 +31,9 @@ const AUDIENCES = [
 ];
 
 const SIGNALS = [
-  { icon: Repeat2, label: 'Repetitive enquiries.' },
-  { icon: Clock3, label: 'Stale/Slow responses' },
-  { icon: AlertCircle, label: 'Slow/Manual operations' },
+  { icon: Clock3, label: 'Slow responses' },
+  { icon: Repeat2, label: 'Repetitive enquiries' },
+  { icon: AlertCircle, label: 'Manual operations' },
   { icon: Search, label: 'Poor business discoveries' }
 ];
 
@@ -53,9 +53,14 @@ export default function WhoWeHelp() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-950 font-display leading-tight">
             We help businesses & professionals adapt to the speed of AI.
           </h2>
-          <p className="text-sm sm:text-base text-slate-500 leading-relaxed max-w-2xl">
-            Traditional processes can&apos;t keep pace with modern client expectations. We design and deploy custom AI automation, lead follow-ups, and customer journey systems that keep your business responsive, scale your execution, and match the speed of today&apos;s market.
-          </p>
+          <div className="text-sm sm:text-base text-slate-500 leading-relaxed max-w-2xl space-y-2">
+            <p>
+              Don&apos;t be left behind! Traditional processes can&apos;t keep pace with modern expectations.
+            </p>
+            <p>
+              We design and deploy custom AI automations, lead follow-ups, and customer journey systems that keep your business responsive, scale your execution, and match the speed of today&apos;s market.
+            </p>
+          </div>
         </div>
 
         {/* Audience Grid */}
