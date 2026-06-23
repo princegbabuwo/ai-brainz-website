@@ -31,10 +31,10 @@ const AUDIENCES = [
 ];
 
 const SIGNALS = [
-  { icon: Search, label: 'Poor business discoveries' },
   { icon: Repeat2, label: 'Repetitive enquiries.' },
   { icon: Clock3, label: 'Stale/Slow responses' },
-  { icon: AlertCircle, label: 'Slow/Manual operations' }
+  { icon: AlertCircle, label: 'Slow/Manual operations' },
+  { icon: Search, label: 'Poor business discoveries' }
 ];
 
 export default function WhoWeHelp() {
@@ -54,7 +54,7 @@ export default function WhoWeHelp() {
             We help businesses & professionals adapt to the speed of AI.
           </h2>
           <p className="text-sm sm:text-base text-slate-500 leading-relaxed max-w-2xl">
-            We design and implement custom AI automation, lead follow-ups, and customer journey workflows for businesses ready to capture every opportunity in today&apos;s AI era.
+            Traditional processes can&apos;t keep pace with modern client expectations. We design and deploy custom AI automation, lead follow-ups, and customer journey systems that keep your business responsive, scale your execution, and match the speed of today&apos;s market.
           </p>
         </div>
 
