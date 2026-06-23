@@ -4,10 +4,10 @@ import { Building2, BriefcaseBusiness, Home, ShoppingBag, Users, Repeat2, Clock3
 
 const AUDIENCES = [
   { icon: Building2, label: 'Service Businesses' },
-  { icon: BriefcaseBusiness, label: 'Agencies & Consultants' },
-  { icon: Home, label: 'Real Estate Teams' },
-  { icon: ShoppingBag, label: 'E-commerce Brands' },
-  { icon: Users, label: 'B2B & Startup Teams' }
+  { icon: BriefcaseBusiness, label: 'Professionals' },
+  { icon: Home, label: 'Real Estate Firms' },
+  { icon: ShoppingBag, label: 'Agencies & Consultants' },
+  { icon: Users, label: 'B2B Companies' }
 ];
 
 const SIGNALS = [
@@ -28,7 +28,7 @@ export default function WhoWeHelp() {
               Who We Help
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-950 font-display">
-              Built for teams with costly manual gaps.
+              Built for businesses and professionals with costly manual gaps.
             </h2>
           </div>
 
