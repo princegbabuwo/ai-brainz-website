@@ -14,7 +14,7 @@ export default function Hero() {
         <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-slate-950 tracking-tight leading-[1.1] max-w-4xl mx-auto">
           Scale Your Business with <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500">
-            Custom AI Workflows
+            Custom AI Solutions
           </span>
         </h1>
 
