@@ -6,7 +6,7 @@ const SERVICES = [
   {
     icon: Bot,
     title: 'Custom AI Integration',
-    description: 'We integrate AI for businesses by building custom pipelines that solve problems specific to the business.'
+    description: 'We integrate AI for businesses by building Agentic AI solutions that solve problems specific to the business.'
   },
   {
     icon: SearchCheck,
