@@ -12,13 +12,17 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
         {/* Main Headline - Centered, Large, and Bold */}
         <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-slate-950 tracking-tight leading-[1.1] max-w-4xl mx-auto">
-          Scale Your Business with <br />
+          Scale your business <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500">
-            Custom AI Workflows
+            Autonomously
           </span>
         </h1>
 
-        <ul className="hidden sm:flex mt-6 max-w-4xl mx-auto flex-wrap items-center justify-center gap-x-6 gap-y-3 text-xs sm:text-sm text-slate-600 leading-6 list-none">
+        <p className="mt-6 text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto">
+          We build custom AI solutions to automate complex workflows and scale your operations.
+        </p>
+
+        <ul className="hidden sm:flex mt-8 max-w-4xl mx-auto flex-wrap items-center justify-center gap-x-6 gap-y-3 text-xs sm:text-sm text-slate-600 leading-6 list-none">
           <li className="inline-flex items-center gap-2">
             <Check className="h-3.5 w-3.5 text-indigo-600 shrink-0" aria-hidden="true" />
             <span>Automate support and repetitive workflows</span>
