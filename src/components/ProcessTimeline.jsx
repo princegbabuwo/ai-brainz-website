@@ -1,57 +1,51 @@
-'use client';
+import Image from 'next/image';
+import { CheckCircle2 } from 'lucide-react';
 
-import { useState } from 'react';
-import { Eye, FileText, CheckSquare, Wrench, ShieldAlert, Rocket } from 'lucide-react';
-
-const STEPS = [
+const ROADMAP = [
   {
-    icon: Eye,
-    stepNum: '01',
-    title: 'AI Opportunity Review',
-    description: 'We audit your business model, customer communications, sales pipelines, and software tools to assess where automation makes logical sense.'
+    title: '01: Pain-Point Mapping',
+    description: 'We pinpoint exactly where you are losing leads, hours, or operational efficiency (e.g. slow response, repetitive support questions).',
+    tag: 'Bottlenecks mapped',
+    image: '/process/pain-point-mapping.jpg',
+    imageAlt: 'Pain point mapping and bottleneck analysis',
   },
   {
-    icon: FileText,
-    stepNum: '02',
-    title: 'Pain-Point Mapping',
-    description: 'We pinpoint exactly where you are losing leads, hours, or operational efficiency (e.g. slow response, repetitive support questions).'
+    title: '02: System Recommendation',
+    description: 'We outline the simplest, highest-impact AI solution to start with. We focus on launching a clean pilot project rather than complex bloat.',
+    tag: 'Pilot scope approved',
+    image: '/process/system-recommendation.jpg',
+    imageAlt: 'Stakeholder system recommendation and strategy alignment',
   },
   {
-    icon: CheckSquare,
-    stepNum: '03',
-    title: 'System Recommendation',
-    description: 'We outline the simplest, highest-impact AI solution to start with. We focus on launching a clean pilot project rather than complex bloat.'
+    title: '03: Build & Integration',
+    description: 'We configure and program the AI workflows, connecting them directly to your existing systems (website, CRM, WhatsApp, email).',
+    tag: 'Connected to your stack',
+    image: '/process/build-and-integration.jpg',
+    imageAlt: 'Software build and AI workflow integration',
   },
   {
-    icon: Wrench,
-    stepNum: '04',
-    title: 'Build & Integration',
-    description: 'We configure and program the AI workflows, connecting them directly to your existing systems (website, CRM, WhatsApp, email).'
+    title: '04: Testing & Optimization',
+    description: 'Before pushing live, we run extensive tests on the assistant’s tone, instructions accuracy, error fallbacks, and sync latency.',
+    tag: 'Quality checks complete',
+    image: '/process/testing-and-optimisation.jpg',
+    imageAlt: 'AI testing, auditing, and performance optimization',
   },
   {
-    icon: ShieldAlert,
-    stepNum: '05',
-    title: 'Testing & Optimization',
-    description: 'Before pushing live, we run extensive tests on the assistant’s tone, instructions accuracy, error fallbacks, and sync latency.'
+    title: '05: Launch & Expansion',
+    description: 'The system runs autonomously. We analyze early logs to tune performance and then expand automation into additional business areas.',
+    tag: 'Ready to scale',
+    image: '/process/launch-and-expansion.jpg',
+    imageAlt: 'Autonomous system launch and scalable expansion',
   },
-  {
-    icon: Rocket,
-    stepNum: '06',
-    title: 'Launch & Expansion',
-    description: 'The system runs autonomously. We analyze early logs to tune performance and then expand automation into additional business areas.'
-  }
 ];
 
 export default function ProcessTimeline() {
-  const [activeStep, setActiveStep] = useState(0);
-
   return (
-    <section id="process" className="py-20 bg-slate-50 relative overflow-hidden">
-      <div className="gradient-blur gradient-blur-blue w-[400px] h-[400px] -top-20 right-10"></div>
-      
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        
-        {/* Title */}
+    <section id="process" className="py-24 bg-slate-50 relative overflow-hidden">
+      <div className="ambient-glow glow-blue w-[420px] h-[420px] -top-24 right-0"></div>
+      <div className="ambient-glow glow-purple w-[320px] h-[320px] bottom-0 left-0"></div>
+
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-100 text-xs font-semibold text-indigo-700">
             <span>OUR ONBOARDING ROADMAP</span>
@@ -64,88 +58,50 @@ export default function ProcessTimeline() {
           </p>
         </div>
 
-        {/* Desktop View: Split layout with Active Step details */}
-        <div className="hidden lg:grid grid-cols-12 gap-12 items-center">
-          {/* Left Column: Interactive Step Selector */}
-          <div className="col-span-5 space-y-3">
-            {STEPS.map((step, index) => {
-              const IconComp = step.icon;
-              const isActive = activeStep === index;
-              return (
-                <button
-                  key={index}
-                  onClick={() => setActiveStep(index)}
-                  className={`w-full text-left p-4 rounded-xl border flex items-center gap-4 transition-all duration-300 cursor-pointer ${isActive ? 'bg-indigo-600 border-indigo-600 text-white shadow-md' : 'bg-white border-slate-200 hover:border-indigo-400 text-slate-700'}`}
-                >
-                  <span className={`font-mono text-sm font-bold ${isActive ? 'text-indigo-200' : 'text-slate-400'}`}>
-                    {step.stepNum}
-                  </span>
-                  <div className={`p-1.5 rounded-lg ${isActive ? 'bg-indigo-500 text-white' : 'bg-slate-100 text-slate-600'}`}>
-                    <IconComp size={18} />
-                  </div>
-                  <span className="font-bold text-sm sm:text-base flex-1">{step.title}</span>
-                </button>
-              );
-            })}
-          </div>
+        <div className="space-y-16 lg:space-y-14">
+          {ROADMAP.map((group, index) => {
+            const flip = index % 2 === 1;
 
-          {/* Right Column: Display Active Step Card */}
-          <div className="col-span-7 h-full flex items-center justify-center">
-            <div className="glass-card rounded-2xl p-10 border border-slate-200/80 bg-white/95 w-full min-h-[300px] flex flex-col justify-between shadow-xl transition-all duration-300">
-              <div className="space-y-6">
-                <div className="flex items-center justify-between">
-                  <span className="font-mono text-5xl font-extrabold text-indigo-100 leading-none">
-                    {STEPS[activeStep].stepNum}
-                  </span>
-                  <div className="p-4 bg-indigo-50 text-indigo-600 rounded-2xl">
-                    {(() => {
-                      const Icon = STEPS[activeStep].icon;
-                      return <Icon size={36} />;
-                    })()}
-                  </div>
-                </div>
-                <div className="space-y-3">
-                  <h3 className="text-2xl font-bold text-slate-900 font-display">
-                    {STEPS[activeStep].title}
-                  </h3>
-                  <p className="text-slate-600 text-base leading-relaxed">
-                    {STEPS[activeStep].description}
-                  </p>
-                </div>
-              </div>
-              
-              <div className="pt-6 mt-6 border-t border-slate-100 flex justify-between items-center text-xs font-bold text-slate-400 uppercase tracking-wider">
-                <span>Phase {activeStep + 1} of 6</span>
-                <span>AI Brainz Integration Protocol</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Mobile View: Vertical scroll list */}
-        <div className="lg:hidden space-y-6">
-          {STEPS.map((step, index) => {
-            const IconComp = step.icon;
             return (
-              <div 
-                key={index}
-                className="glass-card rounded-xl p-6 border border-slate-200 bg-white shadow-sm flex items-start gap-4"
+              <div
+                key={group.title}
+                className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
               >
-                <div className="p-2.5 bg-indigo-50 text-indigo-600 rounded-xl shrink-0">
-                  <IconComp size={22} />
-                </div>
-                <div className="space-y-2">
-                  <div className="flex items-baseline gap-2">
-                    <span className="font-mono text-xs font-bold text-indigo-500 uppercase tracking-wider">Step {step.stepNum}</span>
-                    <h3 className="font-bold text-slate-900 text-lg">{step.title}</h3>
+                <div className={`${flip ? 'lg:col-start-7 lg:order-2' : ''} lg:col-span-6`}>
+                  <div className="max-w-xl">
+                    <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-950 font-display">
+                      {group.title}
+                    </h3>
+                    <p className="mt-4 text-sm sm:text-base leading-relaxed text-slate-600">
+                      {group.description}
+                    </p>
                   </div>
-                  <p className="text-slate-600 text-sm leading-relaxed">{step.description}</p>
+                </div>
+
+                <div className={`${flip ? 'lg:col-start-1 lg:row-start-1' : ''} lg:col-span-6`}>
+                  <div className="relative min-h-[250px] sm:min-h-[290px] overflow-visible">
+                    <div className="relative h-[250px] sm:h-[290px] overflow-hidden rounded-2xl border border-indigo-100/80 bg-white p-5 shadow-lg shadow-indigo-100/40 flex items-center justify-center">
+                      <div className="relative w-full h-full">
+                        <Image
+                          src={group.image}
+                          alt={group.imageAlt}
+                          fill
+                          sizes="(min-width: 1024px) 520px, 100vw"
+                          className="object-contain"
+                        />
+                      </div>
+                    </div>
+
+                    <div className={`absolute ${flip ? 'left-4 sm:left-8' : 'right-4 sm:right-8'} -bottom-4 inline-flex max-w-[88%] items-center gap-2 rounded-xl border border-slate-200 bg-white/95 backdrop-blur-sm px-4 py-3 text-xs font-extrabold text-slate-700 shadow-md`}>
+                      <CheckCircle2 size={18} className="text-indigo-600 shrink-0" />
+                      <span>{group.tag}</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             );
           })}
         </div>
-
       </div>
     </section>
   );

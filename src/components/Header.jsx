@@ -31,7 +31,16 @@ export default function Header() {
         }`}
       >
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group">
+        <Link 
+          href="/" 
+          onClick={(e) => {
+            if (window.location.pathname === '/') {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+          }}
+          className="flex items-center gap-2 group cursor-pointer"
+        >
           <div className="relative w-7 h-7 transition-transform duration-300 group-hover:scale-105">
             <Image 
               src="/logo.svg" 
