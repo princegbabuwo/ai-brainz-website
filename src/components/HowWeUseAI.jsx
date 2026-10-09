@@ -1,32 +1,44 @@
 'use client';
 
 import { useState } from 'react';
-import { Search, FileStack, MessageSquareText, DatabaseZap } from 'lucide-react';
+import { Search, DatabaseZap, MessageSquareText, NotebookPen, ScanSearch, BotMessageSquare } from 'lucide-react';
 
 const SYSTEMS = [
   {
     icon: Search,
     stepNum: '01',
-    title: 'Discovery',
-    text: 'Research businesses, spot bottlenecks, and map where AI can create lift.'
+    title: 'Lead Discovery',
+    text: 'We built pipelines that finds businesses in high-value markets where AI can create meaningful improvement.'
   },
   {
-    icon: FileStack,
+    icon: DatabaseZap,
     stepNum: '02',
-    title: 'Strategy Assets',
-    text: 'Create concise decks, explainers, and implementation notes for better first calls.'
+    title: 'Business Research',
+    text: 'We use AI to build a focused business knowledge base and identify pain points for outreach.'
   },
   {
     icon: MessageSquareText,
     stepNum: '03',
-    title: 'Follow-Up',
-    text: 'Keep outreach, reminders, and next steps consistent without sounding robotic.'
+    title: 'Outreach & Follow-ups',
+    text: 'We send automated custom outreach and use AI to keep follow-ups timely, relevant, and consistent.'
   },
   {
-    icon: DatabaseZap,
+    icon: NotebookPen,
     stepNum: '04',
-    title: 'Knowledge Base',
-    text: 'Turn client lessons, FAQs, and workflows into repeatable operating intelligence.'
+    title: 'Call Intelligence',
+    text: 'We use AI to take notes and document meetings so needs, objections, and actions are not missed.'
+  },
+  {
+    icon: ScanSearch,
+    stepNum: '05',
+    title: 'Content & SEO',
+    text: 'We built a workflows to monitor public questions, create useful content, and improve discoverability.'
+  },
+  {
+    icon: BotMessageSquare,
+    stepNum: '06',
+    title: 'AI Engine Optimization',
+    text: 'We built workflows to track AI-engine references so recommendations stays updated & accurate.'
   }
 ];
 
@@ -39,17 +51,19 @@ export default function HowWeUseAI() {
       <div className="ambient-glow glow-pink w-[420px] h-[420px] -top-10 left-0"></div>
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
-        
+
         {/* Title Block */}
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-100 text-xs font-semibold text-indigo-700">
             <span>HOW WE USE AI</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-            We run AI Brainz with the systems we build.
+            AI is not just what we sell. It is how we operate.
           </h2>
           <p className="text-base text-slate-600">
-            Our agency uses AI for research, outreach, content, notes, and delivery intelligence.
+            We do not just recommend AI. We run our agency with it.
+            <br></br>
+            We use AI internally to research, identify, create, outreach, document, and manage a lean but highly capable agency operation.
           </p>
         </div>
 
@@ -64,11 +78,10 @@ export default function HowWeUseAI() {
                 <button
                   key={index}
                   onClick={() => setActiveStep(index)}
-                  className={`w-full text-left p-4 rounded-xl border flex items-center gap-4 transition-all duration-300 cursor-pointer ${
-                    isActive 
-                      ? 'bg-indigo-600 border-indigo-600 text-white shadow-md' 
+                  className={`w-full text-left p-4 rounded-xl border flex items-center gap-4 transition-all duration-300 cursor-pointer ${isActive
+                      ? 'bg-indigo-600 border-indigo-600 text-white shadow-md'
                       : 'bg-white border-slate-200 hover:border-indigo-400 text-slate-700'
-                  }`}
+                    }`}
                 >
                   <span className={`font-mono text-sm font-bold ${isActive ? 'text-indigo-200' : 'text-slate-400'}`}>
                     {system.stepNum}
@@ -106,21 +119,21 @@ export default function HowWeUseAI() {
                   </p>
                 </div>
               </div>
-              
+
               <div className="pt-6 mt-6 border-t border-slate-100 flex justify-between items-center text-xs font-bold text-slate-400 uppercase tracking-wider">
-                <span>System {activeStep + 1} of 4</span>
+                <span>System {activeStep + 1} of {SYSTEMS.length}</span>
                 <span>AI Brainz Operations Stack</span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Mobile View: Vertical scroll list */}
+        {/* Mobile View: Compact cards */}
         <div className="lg:hidden space-y-6">
           {SYSTEMS.map((system, index) => {
             const IconComp = system.icon;
             return (
-              <div 
+              <div
                 key={index}
                 className="glass-card rounded-xl p-6 border border-slate-200 bg-white shadow-sm flex items-start gap-4"
               >
@@ -128,10 +141,7 @@ export default function HowWeUseAI() {
                   <IconComp size={22} />
                 </div>
                 <div className="space-y-2">
-                  <div className="flex items-baseline gap-2">
-                    <span className="font-mono text-xs font-bold text-indigo-500 uppercase tracking-wider">System {system.stepNum}</span>
-                    <h3 className="font-bold text-slate-900 text-lg">{system.title}</h3>
-                  </div>
+                  <h3 className="font-bold text-slate-900 text-lg">{system.title}</h3>
                   <p className="text-slate-600 text-sm leading-relaxed">{system.text}</p>
                 </div>
               </div>

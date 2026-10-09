@@ -4,6 +4,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
+*.log
 
 # Build outputs
 dist/
@@ -16,6 +17,7 @@ out/
 .vscode/
 .idea/
 Thumbs.db
+.bin/
 
 # Environment variables
 .env*
